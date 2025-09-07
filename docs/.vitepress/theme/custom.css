@@ -1,0 +1,18 @@
+@media (min-width: 960px) {
+
+    .VPContent .VPHero.has-image .main {
+        max-width: 700px;
+    }
+
+    .VPHomeHero .main .text {
+        max-width: 700px;
+    }
+
+    .VPContent.is-home {
+        padding-top: 15vh;
+    }
+
+    .VPHero .image-container {
+        transform: translate(10px, 0.5vh);
+    }
+}
