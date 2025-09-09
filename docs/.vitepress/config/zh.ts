@@ -60,7 +60,7 @@ function sidebarGuide(): DefaultTheme.Sidebar {
       ]
     },
     {
-      text: '人员',
+      text: '团队',
       link: '/team'
     },
   ]

@@ -103,6 +103,10 @@
   .VPPage .VPTeamPageTitle {
     padding: 0px 40px 48px;
   }
+
+  .VPTeamMembersItem.small .desc{
+    min-height: 50px;
+  }
 }
 
 @media (min-width: 768px) {
