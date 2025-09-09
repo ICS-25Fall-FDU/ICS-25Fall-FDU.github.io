@@ -24,4 +24,4 @@ features:
   - title: 🚀期末项目
     details: 敬请期待 📦🔥
 ---
-
+<Confetti />
