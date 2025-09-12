@@ -135,7 +135,7 @@ secret.txt
 
 包管理器全称是软件包管理器，顾名思义是用来管理软件包的软件。在大家熟悉的 Windows 系统中，通常下载软件就是去软件的官网上下载。而在 Linux 系统中，最常见的安装软件的方式是使用软件包管理器从“软件仓库”中下载。包管理器会负责一个软件的全生命周期，包括下载、安装、依赖关系、卸载、更新等等。
 
-Ubuntu 发行版中带有 apt 和 dpkg 包管理器，我们一般使用 apt，基本用法可以参考 [Ubuntu 包管理器文档](https://ubuntu.com/server/docs/package-management)中的 apt 一节。完整的官方文档可以运行 man apt 查阅。（使用前请先看下一节进行换源！）
+Ubuntu 发行版中带有 apt 和 dpkg 包管理器，我们一般使用 apt，基本用法可以参考 [Ubuntu 包管理器文档](https://ubuntu.com/server/docs/package-management)中的 apt 一节。完整的官方文档可以运行 `man apt` 查阅。（使用前请先看下一节进行换源！）
 
 在后续课程中，如果遇到命令行提示说 `xxx not found`，可以尝试使用 apt 安装相应的软件包，如 `sudo apt install xxx`。
 
@@ -184,7 +184,7 @@ VS Code 会提示你安装常用插件，大家也可以自行在网上寻找好
 
 Git 的使用将贯穿本学期的所有实验。下一次实验（Lab 0）会详细介绍 Git 的使用，感兴趣的同学可以提前了解一下。
 
-Git 的常用操作可以通过 [Git 学习网站](https://learngitbranching.js.org/?locale=zh_CN)学习，也可参考[视频](https://www.bilibili.com/video/BV1r3411F7kn)。完整的官方文档可以运行 man git 查阅。使用 VS Code 的同学有福了，Git 插件提供了非常好用的图形化界面。
+Git 的常用操作可以通过 [Git 学习网站](https://learngitbranching.js.org/?locale=zh_CN)学习，也可参考[视频](https://www.bilibili.com/video/BV1r3411F7kn)。完整的官方文档可以运行 `man git` 查阅。使用 VS Code 的同学有福了，Git 插件提供了非常好用的图形化界面。
 
 此外，要将代码库上传到云端，你可能需要注册一个 [GitHub](https://github.com/) 或其它类似网站的账号<del>，或许你可以注册一个账号给我们的[课程网站仓库](https://github.com/ICS-25Fall-FDU/ICS-25Fall-FDU.github.io)一个 star</del>。一套完整使用 Git 的工作流程是：[链接](https://www.bilibili.com/video/BV19e4y1q7JJ)，大家之后在本课程和其他课程的组队任务可以试试这套流程。
 
