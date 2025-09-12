@@ -1,3 +1,7 @@
+---
+prev: false
+---
+
 # ICS 实验入门手册 2025
 
 ## I. Linux 系统
