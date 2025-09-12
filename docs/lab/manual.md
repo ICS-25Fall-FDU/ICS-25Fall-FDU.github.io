@@ -38,9 +38,9 @@ WSL 2是 Microsoft 推出的虚拟机方案，仅支持 Windows 系统，使用�
 
 下面随便列出一些基本命令和操作：
 
-* cd ls mv rm cp cat echo mkdir rmdir sudo pwd
+* `cd` `ls` `mv` `rm` `cp` `cat` `echo` `mkdir` `rmdir` `sudo` `pwd`
 * 输出重定向（>） 输入重定向（<） 管道（|） 结束程序（Ctrl+C） 自动补全（Tab）
-* chgrp chmod chown jobs kill fg bg ln top grep find export
+* `chgrp` `chmod` `chown` `jobs` `kill` `fg` `bg` `ln` `top` `grep` `find` `export`
 * 后台运行（&） 暂停程序（Ctrl+Z） 引用 job（%） EOF（Ctrl+D） 临时环境变量（=）
 
 ## II. 包管理器
