@@ -26,7 +26,7 @@ WSL 2 是 Microsoft 推出的虚拟机方案，仅支持 Windows 系统，使用
 >
 > * 注：**用户名不要用大写，不要用中文！**（经热心同学踩坑后加上）
 >
-> * WSL 已默认使用 WSL2，其与 WSL1 之间的差异见[官方文档](https://learn.microsoft.com/zh-cn/windows/wsl/compare-versions)。
+> * WSL 已默认使用 WSL 2，其与 WSL 1 之间的差异见[官方文档](https://learn.microsoft.com/zh-cn/windows/wsl/compare-versions)。
 
 ### Mac 等特殊情况
 
@@ -174,7 +174,7 @@ sudo apt update
 
 > [!tip]
 >
-> WSL2 常用用法：
+> WSL 2 常用用法：
 > `code some.txt` 即可用 Windows 上的 VSCode 打开文件。
 > `code .` 即可用 Windows 上的 VSCode 打开当前文件夹。
 
@@ -186,11 +186,11 @@ Git 的使用将贯穿本学期的所有实验。下一次实验（Lab 0）会�
 
 Git 的常用操作可以通过 [Git 学习网站](https://learngitbranching.js.org/?locale=zh_CN)学习，也可参考[视频](https://www.bilibili.com/video/BV1r3411F7kn)。完整的官方文档可以运行 man git 查阅。使用 VS Code 的同学有福了，Git 插件提供了非常好用的图形化界面。
 
-此外，要将代码库上传到云端，你可能需要注册一个 [GitHub](https://github.com/) 或其它类似网站的账号~~，或许你可以注册一个账号给我们的[课程网站仓库](https://github.com/ICS-25Fall-FDU/ICS-25Fall-FDU.github.io)一个 star~~。一套完整使用 Git 的工作流程是：[链接](https://www.bilibili.com/video/BV19e4y1q7JJ)，大家之后在本课程和其他课程的组队任务可以试试这套流程。
+此外，要将代码库上传到云端，你可能需要注册一个 [GitHub](https://github.com/) 或其它类似网站的账号<del>，或许你可以注册一个账号给我们的[课程网站仓库](https://github.com/ICS-25Fall-FDU/ICS-25Fall-FDU.github.io)一个 star</del>。一套完整使用 Git 的工作流程是：[链接](https://www.bilibili.com/video/BV19e4y1q7JJ)，大家之后在本课程和其他课程的组队任务可以试试这套流程。
 
 ### SSH
 
-在 ICS 课程中没有直接使用 SSH 连接服务器的内容，但你可能需要[在 Git 中使用 SSH](https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/)。SSH 的完整文档可以通过 man ssh 查阅。
+在 ICS 课程中没有直接使用 SSH 连接服务器的内容，但你可能需要[使用 SSH 连接 GitHub](https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/)。SSH 的完整文档可以通过 man ssh 查阅。
 
 如果你从未使用过 SSH，你可能需要为自己创建一个密钥对，参考指令：`ssh-keygen -t ed25519 -C "your_email@example.com"`。密钥对的默认保存位置为 `~/.ssh/`，其中的 `id_rsa` 为私钥，`id_rsa.pub` 为公钥。如果你好奇密钥是如何工作的，可以参考[这篇文章](https://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html)。
 
