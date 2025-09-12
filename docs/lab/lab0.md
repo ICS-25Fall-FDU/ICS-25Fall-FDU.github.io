@@ -1,3 +1,3 @@
-# Lab0: Linux & Git
+# Lab0: GitLab
 
-TBA
+To Be Announced

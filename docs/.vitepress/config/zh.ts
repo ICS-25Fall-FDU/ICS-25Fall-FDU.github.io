@@ -50,13 +50,14 @@ function nav(): DefaultTheme.NavItem[] {
 function sidebarGuide(): DefaultTheme.Sidebar {
   return [
     {
-      text: '大纲',
-      link: '/schedule'
+      text: '首页',
+      link: '/index'
     },
     {
       text: '实验',
       items: [
-        { text: 'Lab0: Linux & Git', link: '/lab/lab0' }
+        { text: 'ICS 实验入门手册', link: '/lab/manual' },
+        { text: 'Lab0', link: '/lab/lab0' },
       ]
     },
     {
