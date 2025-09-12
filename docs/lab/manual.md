@@ -100,7 +100,7 @@ Git 的使用将贯穿本学期的所有实验。下一次实验（Lab 0）会�
 
 Git 的常用操作可以通过 [Git学习网站](https://learngitbranching.js.org/?locale=zh_CN)学习，也可参考[视频](https://www.bilibili.com/video/BV1r3411F7kn)。完整的官方文档可以运行 man git 查阅。使用 VS Code 的同学有福了，Git 插件提供了非常好用的图形化界面。
 
-此外，要将代码库上传到云端，你可能需要注册一个 [GitHub](www.github.com) 或其它类似网站的账号~~，或许你可以注册一个账号给我们的[课程网站仓库](https://github.com/ICS-25Fall-FDU/ICS-25Fall-FDU.github.io)一个 star~~。一套完整使用 Git 的工作流程是：[链接](https://www.bilibili.com/video/BV19e4y1q7JJ)，大家之后在本课程和其他课程的组队任务可以试试这套流程。
+此外，要将代码库上传到云端，你可能需要注册一个 [GitHub](https://github.com/) 或其它类似网站的账号~~，或许你可以注册一个账号给我们的[课程网站仓库](https://github.com/ICS-25Fall-FDU/ICS-25Fall-FDU.github.io)一个 star~~。一套完整使用 Git 的工作流程是：[链接](https://www.bilibili.com/video/BV19e4y1q7JJ)，大家之后在本课程和其他课程的组队任务可以试试这套流程。
 
 ### SSH
 
