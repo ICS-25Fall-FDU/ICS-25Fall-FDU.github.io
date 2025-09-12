@@ -8,13 +8,13 @@
 
 ### VMWare Desktop Hypervisor
 
-VMWare 在 Windows/MacOS 系统上的虚拟化软件 Workstation Pro 以及 Fusion Pro 于2024年5月13日起供个人免费使用，可在[官方网站](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)下载。这两个虚拟化软件图形界面设计较为清晰，不需要额外教学，大家可以自行尝试。
+VMWare 在 Windows/macOS 系统上的虚拟化软件 Workstation Pro 以及 Fusion Pro 于2024年5月13日起供个人免费使用，可在[官方网站](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)下载。这两个虚拟化软件图形界面设计较为清晰，不需要额外教学，大家可以自行尝试。
 
-VMWare Desktop Hypervisor 系列使用的系统镜像可以从镜像站下载，如[科大镜像站的Ubuntu镜像链接](https://mirrors.ustc.edu.cn/ubuntu-releases/)。我们推荐使用 Ubuntu 22.04 LTS 发行版，从上面的链接进去的话，可以在 `22.04/ubuntu-22.04.4-desktop-amd64.iso` 找到对应的镜像文件。
+VMWare Desktop Hypervisor 系列使用的系统镜像可以从镜像站下载，如[科大镜像站的 Ubuntu 镜像链接](https://mirrors.ustc.edu.cn/ubuntu-releases/)。我们推荐使用 Ubuntu 22.04 LTS 发行版，从上面的链接进去的话，可以在 `22.04/ubuntu-22.04.4-desktop-amd64.iso` 找到对应的镜像文件。
 
 ### WSL 2
 
-WSL 2是 Microsoft 推出的虚拟机方案，仅支持 Windows 系统，使用体验极佳。对于 Windows 10 2004以上版本或 Windows 11系统，可以参考 [WSL官方文档](https://learn.microsoft.com/zh-cn/windows/wsl/install)安装 WSL 2。该文档中还包含其它一些有用的信息，推荐感兴趣的同学完整浏览，特别是跨系统文件访问和跨系统网络访问。（当然，完整浏览不是实验必要的）
+WSL 2 是 Microsoft 推出的虚拟机方案，仅支持 Windows 系统，使用体验极佳。对于 Windows 10 2004 以上版本或 Windows 11 系统，可以参考 [WSL 官方文档](https://learn.microsoft.com/zh-cn/windows/wsl/install)安装 WSL 2。该文档中还包含其它一些有用的信息，推荐感兴趣的同学完整浏览，特别是跨系统文件访问和跨系统网络访问。（当然，完整浏览不是实验必要的）
 
 > [!tip]
 >
@@ -22,7 +22,7 @@ WSL 2是 Microsoft 推出的虚拟机方案，仅支持 Windows 系统，使用�
 >
 > * 注：**用户名不要用大写，不要用中文！**（经热心同学踩坑后加上）
 >
-> * WSL 已默认使用 WSL2，其与 WSl1之间的差异见[官方文档](https://learn.microsoft.com/zh-cn/windows/wsl/compare-versions)。
+> * WSL 已默认使用 WSL2，其与 WSL1 之间的差异见[官方文档](https://learn.microsoft.com/zh-cn/windows/wsl/compare-versions)。
 
 ### Mac 等特殊情况
 
@@ -33,15 +33,97 @@ WSL 2是 Microsoft 推出的虚拟机方案，仅支持 Windows 系统，使用�
 对于默认没有图形界面的 WSL 2，虽然你可以自行寻找教程安装合适的图形界面应用，但我们还是推荐你以使用命令行交互为主，这是因为命令行在后续实验中是必须掌握的基础技能。命令行的基本用法可以参考 [MIT Missing Semester](https://missing-semester-cn.github.io/) 上的第一、二节入门 Linux 命令行使用。
 
 一般来说，各种命令都可以通过在后面加上 `--help` 的方式输出用法，如运行 `ls --help` 可输出 `ls` 命令的用法。
-如果你需要更加详细的说明，可以通过 `man` 查询命令对应的文档，如 `man tar`，也可以在 [GNU网站](https://www.gnu.org/software/software.html)上找到相关软件的具体说明。
-另外推荐一个命令常用用法速查的命令行工具 `tldr` ，这是 [GitHub仓库地址](https://github.com/tldr-pages/tldr)，可以自行安装。（看不懂怎么安装的话 `pip3 install tldr` 即可）
+如果你需要更加详细的说明，可以通过 `man` 查询命令对应的文档，如 `man tar`，也可以在 [GNU 网站](https://www.gnu.org/software/software.html)上找到相关软件的具体说明。
+另外推荐一个命令常用用法速查的命令行工具 `tldr` ，这是 [GitHub 仓库地址](https://github.com/tldr-pages/tldr)，可以自行安装。（看不懂怎么安装的话 `pip3 install tldr` 即可）
 
-下面随便列出一些基本命令和操作：
+下面列出一些基本命令和操作：
 
-* `cd` `ls` `mv` `rm` `cp` `cat` `echo` `mkdir` `rmdir` `sudo` `pwd`
-* 输出重定向（>） 输入重定向（<） 管道（|） 结束程序（Ctrl+C） 自动补全（Tab）
-* `chgrp` `chmod` `chown` `jobs` `kill` `fg` `bg` `ln` `top` `grep` `find` `export`
-* 后台运行（&） 暂停程序（Ctrl+Z） 引用 job（%） EOF（Ctrl+D） 临时环境变量（=）
+```shell
+# 查看当前目录
+user@linux:~$ pwd
+/home/user
+
+# 查看当前目录下的文件夹
+user@linux:~$ ls
+ICS2025  OS2025
+
+# 进入 ICS2025 目录
+user@linux:~$ cd ICS2025
+
+# 查看 ICS2025 目录下的文件
+user@linux:~/ICS2025$ ls
+manual.md  lab0.md
+
+# 查看文件内容
+user@linux:~/ICS2025$ cat manual.md
+This is the course manual.
+
+# 输出一行文字到屏幕
+user@linux:~/ICS2025$ echo "Hello Linux"
+Hello Linux
+
+# 将输出写入文件（覆盖写入）
+user@linux:~/ICS2025$ echo "new notes" > notes.txt
+user@linux:~/ICS2025$ cat notes.txt
+new notes
+
+# 将命令输出重定向到文件
+user@linux:~/ICS2025$ ls > filelist.txt
+user@linux:~/ICS2025$ cat filelist.txt
+lab0.md
+manual.md
+notes.txt
+filelist.txt
+
+# 使用管道：统计文件个数
+user@linux:~/ICS2025$ ls | wc -l
+4
+
+# 复制文件
+user@linux:~/ICS2025$ cp lab0.md lab0_copy.md
+user@linux:~/ICS2025$ ls
+filelist.txt  lab0.md  lab0_copy.md  manual.md  notes.txt
+
+# 移动（或重命名）文件
+user@linux:~/ICS2025$ mv lab0_copy.md lab1.md
+user@linux:~/ICS2025$ ls
+filelist.txt  lab0.md  lab1.md  manual.md  notes.txt
+
+# 新建目录
+user@linux:~/ICS2025$ mkdir experiments
+user@linux:~/ICS2025$ ls
+experiments/  filelist.txt  lab0.md  lab1.md  manual.md  notes.txt
+
+# 把文件移动到子目录
+user@linux:~/ICS2025$ mv notes.txt experiments/
+user@linux:~/ICS2025$ ls experiments
+notes.txt
+
+# 删除文件
+user@linux:~/ICS2025$ rm filelist.txt
+user@linux:~/ICS2025$ ls
+experiments/  lab0.md  lab1.md  manual.md
+
+# 删除空目录
+user@linux:~/ICS2025$ rmdir experiments
+rmdir: failed to remove 'experiments': Directory not empty
+
+# 先删除文件再删除目录
+user@linux:~/ICS2025$ rm experiments/notes.txt
+user@linux:~/ICS2025$ rmdir experiments
+user@linux:~/ICS2025$ ls
+lab0.md  lab1.md  manual.md
+
+# 返回上一级目录
+user@linux:~/ICS2025$ cd ..
+user@linux:~$ ls
+ICS2025  OS2025
+
+# 使用管理员权限执行命令（示例）
+user@linux:~$ sudo ls /root
+[sudo] password for user: 
+secret.txt
+```
 
 ## II. 包管理器
 
@@ -49,7 +131,7 @@ WSL 2是 Microsoft 推出的虚拟机方案，仅支持 Windows 系统，使用�
 
 包管理器全称是软件包管理器，顾名思义是用来管理软件包的软件。在大家熟悉的 Windows 系统中，通常下载软件就是去软件的官网上下载。而在 Linux 系统中，最常见的安装软件的方式是使用软件包管理器从“软件仓库”中下载。包管理器会负责一个软件的全生命周期，包括下载、安装、依赖关系、卸载、更新等等。
 
-Ubuntu 发行版中带有 apt 和 dpkg 包管理器，我们一般使用 apt，基本用法可以参考 [Ubuntu包管理器文档](https://ubuntu.com/server/docs/package-management)中的 apt 一节。完整的官方文档可以运行 man apt 查阅。（使用前请先看下一节进行换源！）
+Ubuntu 发行版中带有 apt 和 dpkg 包管理器，我们一般使用 apt，基本用法可以参考 [Ubuntu 包管理器文档](https://ubuntu.com/server/docs/package-management)中的 apt 一节。完整的官方文档可以运行 man apt 查阅。（使用前请先看下一节进行换源！）
 
 在后续课程中，如果遇到命令行提示说 `xxx not found`，可以尝试使用 apt 安装相应的软件包，如 `sudo apt install xxx`。
 
@@ -92,13 +174,13 @@ sudo apt update
 > `code some.txt` 即可用 Windows 上的 VSCode 打开文件。
 > `code .` 即可用 Windows 上的 VSCode 打开当前文件夹。
 
-VS Code 会提示你安装常用插件，大家也可以自行在网上寻找好用的插件。关于 VS Code 安装与配置的问题，可参考 [VS Code官方文档](https://code.visualstudio.com/docs)。
+VS Code 会提示你安装常用插件，大家也可以自行在网上寻找好用的插件。关于 VS Code 安装与配置的问题，可参考 [VS Code 官方文档](https://code.visualstudio.com/docs)。
 
 ### Git
 
 Git 的使用将贯穿本学期的所有实验。下一次实验（Lab 0）会详细介绍 Git 的使用，感兴趣的同学可以提前了解一下。
 
-Git 的常用操作可以通过 [Git学习网站](https://learngitbranching.js.org/?locale=zh_CN)学习，也可参考[视频](https://www.bilibili.com/video/BV1r3411F7kn)。完整的官方文档可以运行 man git 查阅。使用 VS Code 的同学有福了，Git 插件提供了非常好用的图形化界面。
+Git 的常用操作可以通过 [Git 学习网站](https://learngitbranching.js.org/?locale=zh_CN)学习，也可参考[视频](https://www.bilibili.com/video/BV1r3411F7kn)。完整的官方文档可以运行 man git 查阅。使用 VS Code 的同学有福了，Git 插件提供了非常好用的图形化界面。
 
 此外，要将代码库上传到云端，你可能需要注册一个 [GitHub](https://github.com/) 或其它类似网站的账号~~，或许你可以注册一个账号给我们的[课程网站仓库](https://github.com/ICS-25Fall-FDU/ICS-25Fall-FDU.github.io)一个 star~~。一套完整使用 Git 的工作流程是：[链接](https://www.bilibili.com/video/BV19e4y1q7JJ)，大家之后在本课程和其他课程的组队任务可以试试这套流程。
 
@@ -114,7 +196,7 @@ Vim 的基本用法为运行 `vim something.txt` 打开文件，然后按 `i` �
 
 由于 Vim 有一些学习难度，大家当然可以直接选择开箱即用的 VS Code ，但是如果你习惯了 Vim 的操作，用起来就非常爽快。
 
-Vim 的用法非常丰富，如有兴趣可以通过 Vim 自带的教程程序 `vimtutor` 学习（在安装 vim 之后直接在命令行输入这个即可），也可以通过 [Vim学习网站](https://vim-adventures.com/)学习，或者参考[这个保姆级入门视频](https://www.bilibili.com/video/BV13t4y1t7Wg)。
+Vim 的用法非常丰富，如有兴趣可以通过 Vim 自带的教程程序 `vimtutor` 学习（在安装 vim 之后直接在命令行输入这个即可），也可以通过 [Vim 学习网站](https://vim-adventures.com/)学习，或者参考[这个保姆级入门视频](https://www.bilibili.com/video/BV13t4y1t7Wg)。
 
 > Copilot 官方提供了一个 [Vim 插件](https://github.com/github/copilot.vim)，可以让你在 Vim 中使用 Copilot。
 
