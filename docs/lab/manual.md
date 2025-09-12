@@ -169,14 +169,14 @@ sudo apt update
 
 ### VS Code
 
-如果你使用的是 VMWare，可以将 VS Code 安装在虚拟机里，也可以通过本机上的 VSCode SSH 连接到虚拟机中进行开发。
-如果你使用的是 WSL 2，直接将 VSCode 装在本机上即可[使用本机上的VS Code编辑和运行虚拟机中的代码](https://code.visualstudio.com/docs/remote/wsl)。
+如果你使用的是 VMWare，可以将 VS Code 安装在虚拟机里，也可以通过本机上的 VS Code: Remote - SSH 连接到虚拟机中进行开发。
+如果你使用的是 WSL 2，直接将 VS Code 装在本机上即可[使用本机上的 VS Code 编辑和运行虚拟机中的代码](https://code.visualstudio.com/docs/remote/wsl)。
 
 > [!tip]
 >
 > WSL 2 常用用法：
-> `code some.txt` 即可用 Windows 上的 VSCode 打开文件。
-> `code .` 即可用 Windows 上的 VSCode 打开当前文件夹。
+> `code some.txt` 即可用 Windows 上的 VS Code 打开文件。
+> `code .` 即可用 Windows 上的 VS Code 打开当前文件夹。
 
 VS Code 会提示你安装常用插件，大家也可以自行在网上寻找好用的插件。关于 VS Code 安装与配置的问题，可参考 [VS Code 官方文档](https://code.visualstudio.com/docs)。
 
