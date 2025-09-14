@@ -12,4 +12,8 @@ next: false
 
 * **Sep. 12, 2025** [ICS 实验入门手册](/lab/manual)发布
 
+## 🔍 Just for Fun
+
+<video src="/assets/sl.mp4" controls width="800"></video>
+
 <Confetti />
