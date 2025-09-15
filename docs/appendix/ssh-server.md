@@ -1,6 +1,6 @@
-# SSH 配置指南
+# 使用 SSH 连接服务器
 
-本指南将帮助使用 macOS 系统的同学完成 SSH 密钥对的生成与配置，并连接到本课程提供的服务器环境进行实验。
+本文档将帮助使用 macOS 系统的同学完成 SSH 密钥对的生成与配置，并连接到本课程提供的服务器环境进行实验。
 
 ## 1. SSH 简介
 
@@ -44,12 +44,12 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
 执行上述命令后，系统会提示您进行一系列配置：
 
-   ```bash
-   # 连按三个回车即可
-   Enter file in which to save the key (/Users/yourusername/.ssh/id_rsa):
-   Enter passphrase (empty for no passphrase):
-   Enter same passphrase again:
-   ```
+```bash
+# 连按三个回车即可
+Enter file in which to save the key (/Users/yourusername/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+```
 
 ### 验证密钥生成
 
@@ -72,9 +72,9 @@ cat ~/.ssh/id_rsa.pub
 
 观察到输出为：`ssh-rsa xxxxxxxxxxxxxxx = xxxxx@xxxx.xx` 即正确
 
-## 3. 将服务器与 VS Code 连接
+## 3. 使用 VS Code 的 Remote 插件进行远程开发
 
-### 在 VS Code 中，安装对应拓展
+### 安装 VS Code 插件
 
    ![remote_explorer](remote_explorer.png)
 
@@ -95,16 +95,16 @@ cat ~/.ssh/id_rsa.pub
 ssh root@服务器地址 -p 端口号
 ```
 
-   ![ssh_server](ssh_server2.png)
+![ssh_server](ssh_server2.png)
 
-   首次连接时，系统会显示服务器的指纹信息并询问是否信任：
+首次连接时，系统会显示服务器的指纹信息并询问是否信任：
 
-   ```bash
-   The authenticity of host 'xxxxxxx' can't be established.
-   ECDSA key fingerprint is SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
-   Are you sure you want to continue connecting (yes/no/[fingerprint])?
-   ```
+```bash
+The authenticity of host 'xxxxxxx' can't be established.
+ECDSA key fingerprint is SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
 
-   输入 `yes` 并按回车键继续。
+输入 `yes` 并按回车键继续。
 
-   如果配置正确，您应该能够成功登录到服务器而无需输入密码。
+如果配置正确，您应该能够成功登录到服务器而无需输入密码。
