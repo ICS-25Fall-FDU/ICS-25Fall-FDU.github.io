@@ -8,7 +8,16 @@
     "docs:serve": "vitepress serve docs",
     "docs:preview": "vitepress preview docs"
   },
-  "author": "",
+  "author": "Zecyel <i@zecyel.xyz>",
+  "maintainers": [
+    { "name": "Zecyel", "url": "https://github.com/Zecyel" },
+    { "name": "fduTristin", "url": "https://github.com/fduTristin" },
+    { "name": "Caibao7", "url": "https://github.com/Caibao7" },
+    { "name": "JurFal", "url": "https://github.com/JurFal" },
+    { "name": "ranxiaoxiao-mmm", "url": "https://github.com/ranxiaoxiao-mmm" },
+    { "name": "xzh2004", "url": "https://github.com/xzh2004" },
+    { "name": "ell77abu", "url": "https://github.com/ell77abu" }
+  ],
   "dependencies": {
     "@nolebase/vitepress-plugin-enhanced-mark": "^2.12.0",
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.11.1",

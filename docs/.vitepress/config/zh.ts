@@ -61,6 +61,12 @@ function sidebarGuide(): DefaultTheme.Sidebar {
       ]
     },
     {
+      text: '附录',
+      items: [
+        { text: '提问的艺术', link: '/appendix/how-to-ask' },
+      ]
+    },
+    {
       text: '团队',
       link: '/team'
     },
