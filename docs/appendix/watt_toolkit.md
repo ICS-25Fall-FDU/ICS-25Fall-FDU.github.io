@@ -4,7 +4,7 @@
 
 > [!info]
 >
-> Watt Toolkit 是一款免费开源的多功能工具箱，不仅可以加速 GitHub，还支持 Steam、微软商店等其他平台的网络加速。
+> Watt Toolkit 是一款免费开源的多功能工具箱，不仅可以加速 GitHub，还支持 Steam、Google 翻译等其他平台的网络加速。
 
 ## I. 下载与安装 Watt Toolkit
 
