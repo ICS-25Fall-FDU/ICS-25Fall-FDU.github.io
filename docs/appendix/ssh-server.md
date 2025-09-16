@@ -79,7 +79,7 @@ cat ~/.ssh/id_rsa.pub
 cat ~/.ssh/id_ed25519.pub
 ```
 
-观察到输出为 `ssh-rsa xxxxxxxxxxxxxxx = xxxxx@xxxx` 或 `ssh-ed25519 xxxxxxxxxxxxxxx = xxxxx@xxxx`，这就是你的公钥，可以复制并分享给他人。
+观察到输出为 `ssh-rsa xxxxxxxxxxxxxxx xxxxx@xxxx` 或 `ssh-ed25519 xxxxxxxxxxxxxxx xxxxx@xxxx`，这就是你的公钥，可以复制并分享给他人。
 
 ## 3. 使用 VS Code 的 Remote 插件进行远程开发
 
