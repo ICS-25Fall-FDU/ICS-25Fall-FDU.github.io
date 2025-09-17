@@ -66,7 +66,7 @@ function sidebarGuide(): DefaultTheme.Sidebar {
         { text: '提问的艺术', link: '/appendix/how-to-ask' },
         { text: '使用 SSH 连接服务器', link: '/appendix/ssh-server' },
         { text: '使用 Watt Toolkit 代理访问 GitHub', link: '/appendix/watt_toolkit' },
-        { text: '杂项问题 Q & A', link: '/appendix/misc-qa' }
+        { text: '杂项问题 Q&A', link: '/appendix/misc-qa' }
       ]
     },
     {
