@@ -27,7 +27,7 @@ ssh: connect to host github.com port 22: Connection refused
 
 修改 SSH 配置文件，将 GitHub 的 SSH 端口从 22 改为 443。
 
-1. 用任意文本编辑器（比如 VSCode ， Nano 等）打开 SSH 配置文件 `~/.ssh/config`。
+1. 用任意文本编辑器（比如 VSCode，Nano 等）打开 SSH 配置文件 `~/.ssh/config`。
 2. 在任意处添加以下内容：
 
     ```text
