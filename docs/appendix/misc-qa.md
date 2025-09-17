@@ -38,7 +38,7 @@ ssh: connect to host github.com port 22: Connection refused
     ```
 
 3. 保存文件并退出编辑器。
-4. 重试 `ssh -t git@github.com` 指令，应该可以成功连接了。现象：
+4. 重试 `ssh -t git@github.com` 指令，应该可以成功连接了，现象：
 
     ```bash
     Hi {username}! You've successfully authenticated, but GitHub does not provide shell access.
