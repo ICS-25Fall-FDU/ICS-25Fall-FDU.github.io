@@ -4,7 +4,7 @@
 
 ### 现象描述
 
-执行任何 GitHub **SSH 版本**的仓库指令（如 `git clone git@github.com:ICS-25Fall-FDU/ICS-25Fall-FDU.github.io.git` ）出现以下报错：
+执行任何 GitHub **SSH 方式**的仓库指令（如 `git clone git@github.com:ICS-25Fall-FDU/ICS-25Fall-FDU.github.io.git` ）出现以下报错：
 
 ```bash
 ssh: connect to host github.com port 22: Connection refused
