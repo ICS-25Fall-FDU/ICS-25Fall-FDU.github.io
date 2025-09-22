@@ -33,9 +33,9 @@ StudentGradeManagementSystem/
 
 ### 什么是版本控制？
 
-**版本控制（Version Control）** 是一种系统，用来 **记录文件内容的变化**，并且能在以后 **回溯到特定的版本**。
+版本控制（Version Control）是一种用来记录文件内容的变化，并且能在以后回溯到特定版本的系统。
 
-就像「保存历史记录」一样，它能帮我们：
+就像“保存历史记录”一样，它能帮我们：
 
 - 保存每次修改（而不是只保留最新版本）
 - 查看每次修改了什么
@@ -46,12 +46,12 @@ StudentGradeManagementSystem/
 >
 > - 你可以查看我们课程网页仓库的 [commit 历史](https://github.com/ICS-25Fall-FDU/ICS-25Fall-FDU.github.io/commits/main/)，这里记录了我们的每一次修改。
 >
-> - 我们在生活中使用软件的版本号（例如 `v1.98.2`）则是 **「发行版」**。
+> - 我们在生活中使用软件的版本号（例如 `v1.98.2`）则是“发行版”。
 >   - 例如我们使用的校园助手 App，在历经界面优化、接口修复等多次修改形成一个稳定、完整的版本后，才会打上标签（tag）发行。
 
 ## Git
 
-Git 是一种 **分布式版本控制软件**。
+Git 是一种分布式版本控制软件。
 
 ### 下载与安装
 
@@ -68,7 +68,7 @@ Git 是一种 **分布式版本控制软件**。
 
 ### 配置
 
-在 Git 中，`git config` 是用来 **配置 Git 行为和环境** 的命令。
+在 Git 中，`git config` 是用来配置 Git 行为和环境的命令。
 
 > [!important]
 >
@@ -113,7 +113,7 @@ git config --global alias.cm "commit -m"
 
 ### Git 基本操作
 
-想要完全掌握 Git 的使用并不是一件轻松的事，但在本学期的实验中并不会遇到非常复杂的场景，因此我们只需掌握以下操作即可。
+想要最低限度地使用 Git，以下的命令是必须掌握的。
 
 - `git init`
 
@@ -191,3 +191,63 @@ VS Code 原生集成了 Git，同时提供了一系列插件，例如 Git 提交
   ![8](Git-Test/8.png)
 
 :::
+
+### Git 进阶操作
+
+此处会涉及一些和“分支管理”相关的 Git 操作。熟悉这些指令可以让你更好地管理你的代码分支。
+
+- `git status`
+
+  经常性地在运行 Git 命令前运行 `git status` 是个好习惯，它可以告诉你，你当前在哪个分支下，有哪些修改还未被暂存，有哪些暂存区的文件还没被提交。
+
+  ```bash
+  (base) [11:45:14] zecyel@ZDesktop ~/test-git
+  $ git status
+  On branch main
+  Changes to be committed:
+    (use "git restore --staged <file>..." to unstage)
+          new file:   tracked-file
+  
+  Untracked files:
+    (use "git add <file>..." to include in what will be committed)
+          untracked-file
+  ```
+
+- `git branch`
+
+  可以使用 `git branch <branch-name>` 来从当前分支创建一个新的分支。注意，这不会将当前的代码分支切换到新创建的分支。
+
+  例如，在 `main` 分支下运行 `git branch dev` 会创建一个 `dev` 分支（你可以使用 `git status` 查看！）。但是当前仍然会在 `main` 分支。
+
+  如果你想查看当前有哪些分支，可以使用 `git branch` 或者 `git branch -a`。查阅资料并在报告中回答，这两条命令的区别是什么？
+
+  ```bash
+  (base) [15:06:54] zecyel@ZDesktop ~/test-git
+  $ git branch dev
+  (base) [15:24:08] zecyel@ZDesktop ~/test-git
+  $ git branch
+    dev
+  * main
+  (base) [15:24:10] zecyel@ZDesktop ~/test-git
+  $ git branch -a
+    dev
+  * main
+  ```
+
+- `git switch`
+
+  可以使用 `git switch <branch-name>` 来切换到已经存在的分支。注意，你需要先保存你在当前分支上的所有文件，假如在当前分支上还有未 commit 的文件，那么这次 `git switch` 会失败。
+
+  ```bash
+  (base) [15:28:26] zecyel@ZDesktop ~/test-git
+  $ git switch dev
+  Switched to branch 'dev'
+  ```
+
+- `git checkout`
+
+  `git checkout` 曾经是使用最频繁的 Git 分支管理指令。但是现在，它的大部分功能已经被拆分到 `git branch` 和 `git switch` 了。我们仍在高频使用的 `git checkout` 指令只有 `git checkout -b <branch-name>`。此指令相当于 `git branch <branch-name> && git switch <branch-name>`，它可以从当前分支创建一个新的分支，并切换到这个分支。
+
+- `git merge`
+
+  Await for fduTristin...
