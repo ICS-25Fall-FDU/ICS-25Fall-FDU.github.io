@@ -425,7 +425,7 @@ Fast-forward
     >
     > 如果你想要编译运行 `main.c`，执行
     >
-    > ```C
+    > ```bash
     > make 
     > ./main
     > make clean
