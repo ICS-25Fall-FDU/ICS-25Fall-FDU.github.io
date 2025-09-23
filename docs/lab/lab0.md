@@ -224,7 +224,9 @@ VS Code 原生集成了 Git，同时提供了一系列插件，例如 Git 提交
 
   例如，在 `main` 分支下运行 `git branch dev` 会创建一个 `dev` 分支（你可以使用 `git status` 查看！）。但是当前仍然会在 `main` 分支。
 
-  如果你想查看当前有哪些分支，可以使用 `git branch` 或者 `git branch -a`。查阅资料并在报告中回答，这两条命令的区别是什么？
+  > [!tip]
+  >
+  > 如果你想查看当前有哪些分支，可以使用 `git branch` 或者 `git branch -a`。查阅资料并在报告中回答，这两条命令的区别是什么？
 
   ```bash
   user@linux:~/test-git$ git branch dev
