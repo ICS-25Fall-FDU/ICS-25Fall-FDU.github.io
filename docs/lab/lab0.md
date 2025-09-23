@@ -31,6 +31,10 @@ StudentGradeManagementSystem/
 
 另一种情景是，假设你和 Zecyel 同学在协作这个项目，你们同时修改了 `main.cpp`，合并的时候只能将代码逐行对比，将他的部分代码复制进来。
 
+> [!tip]
+>
+> 你之前有过多人协同开发的经历吗？如果有，你们是使用什么方式分工协作的？
+
 ### 什么是版本控制？
 
 版本控制（Version Control）是一种用来记录文件内容的变化，并且能在以后回溯到特定版本的系统。
@@ -44,10 +48,11 @@ StudentGradeManagementSystem/
 
 > [!note]
 >
-> - 你可以查看我们课程网页仓库的 [commit 历史](https://github.com/ICS-25Fall-FDU/ICS-25Fall-FDU.github.io/commits/main/)，这里记录了我们的每一次修改。
+> 你可以查看我们课程网页仓库的 [commit 历史](https://github.com/ICS-25Fall-FDU/ICS-25Fall-FDU.github.io/commits/main/)，这里记录了我们的每一次修改。
 >
-> - 我们在生活中使用软件的版本号（例如 `v1.98.2`）则是“发行版”。
->   - 例如我们使用的校园助手 App，在历经界面优化、接口修复等多次修改形成一个稳定、完整的版本后，才会打上标签（tag）发行。
+> 我们在生活中使用软件的版本号（例如 `v1.98.2`）则是“发行版”。
+>
+> 例如我们使用的校园助手 App，在历经界面优化、接口修复等多次修改形成一个稳定、完整的版本后，才会打上标签（tag）发行。
 
 ## Git
 
@@ -63,8 +68,9 @@ Git 是一种分布式版本控制软件。
 
 > [!tip]
 >
-> - 本学期的大部分实验都在 Linux 系统上完成，使用 Windows 系统的同学请在虚拟机安装 Git，使用服务器的同学请在服务器上安装 Git。
-> - 检查安装是否成功。在虚拟机 / 服务器上输入 `git --version`，如果输出 `git version <版本号>`，则为安装成功。
+> 本学期的大部分实验都在 Linux 系统上完成，使用 Windows 系统的同学请在 WSL 或虚拟机安装 Git，使用服务器的同学请在服务器上安装 Git。
+>
+> 检查安装是否成功。在虚拟机 / 服务器上输入 `git --version`，如果输出 `git version <版本号>`，则为安装成功。
 
 ### 配置
 
@@ -205,7 +211,7 @@ VS Code 原生集成了 Git，同时提供了一系列插件，例如 Git 提交
   On branch main
   Changes to be committed:
     (use "git restore --staged <file>..." to unstage)
-          new file:   tracked-file
+          new file:   added-file
   
   Untracked files:
     (use "git add <file>..." to include in what will be committed)
@@ -256,27 +262,36 @@ VS Code 原生集成了 Git，同时提供了一系列插件，例如 Git 提交
 
   合并有两种常见的结果：
 
-  1. Fast-forward 合并。如果 main 没有新的提交，只落后于 feature，执行 `git merge feature` 后 `main` 分支会直接“快进”到 `D`。
-
+  1. Fast-forward 合并。如果 main 没有新的提交，只落后于 feature:
+  
       ```bash
       main:    A---B
-      feature: A---B---C---D
+                    \
+      feature:       C---D
+      ```
+  
+      执行 `git merge feature` 后 `main` 分支会直接“快进”到 `D`。
+
+      ```bash
+      main:    A---B---C---D
+                    \
+      feature:       C---D
       ```
 
   2. 非 fast-forward 合并。如果两个分支各有提交：
 
       ```bash
-      main:    A---B
-                      \
-      feature:         C---D
+      main:    A---B---E
+                    \
+      feature:       C---D
       ```
 
-      执行 `git merge feature` 后 Git 会创建一个新的合并提交（merge commit）`E`：
+      执行 `git merge feature` 后 Git 会创建一个新的合并提交（merge commit）`F`：
 
       ```bash
-      main:    A---B-------E
-                      \   /
-      feature:         C---D
+      main:    A---B---E---F
+                    \     /
+      feature:       C---D
       ```
 
   :::tip
@@ -284,7 +299,7 @@ VS Code 原生集成了 Git，同时提供了一系列插件，例如 Git 提交
   当两个分支修改了同一文件的同一位置，就会出现冲突（conflict），Git 无法自动合并。
 
   ```bash
-  user@linux:~/test-git# git merge feature
+  user@linux:~/test-git$ git merge feature
   Auto-merging main.cpp
   CONFLICT (content): Merge conflict in main.cpp
   Automatic merge failed; fix conflicts and then commit the result.
@@ -295,7 +310,7 @@ VS Code 原生集成了 Git，同时提供了一系列插件，例如 Git 提交
 
 ## GitHub
 
-GitHub 是一个 **基于 Git 的代码托管平台**，你可以将你的本地 Git 仓库上传为远程仓库，这样别人就可以拉取你的代码，与你进行协作。
+GitHub 是一个基于 Git 的代码托管平台，你可以将你的本地 Git 仓库上传为远程仓库，这样别人就可以拉取你的代码，与你进行协作。
 
 ### 配置
 
@@ -323,18 +338,18 @@ GitHub 是一个 **基于 Git 的代码托管平台**，你可以将你的本地
     >
     > SSH key 的生成参考[这个文档](/appendix/ssh-server/#_2-生成-ssh-密钥对)
     >
-    > 如果你在服务器上实验，需要在服务器上生成密钥对；如果在自己电脑的虚拟机上实验，需要在 wsl 中生成；如果你以后希望在本机拉取/上传 GitHub 仓库，则需要在本机生成密钥对。
+    > 如果你在服务器上实验，需要在服务器上生成密钥对；如果在自己电脑的虚拟机上实验，需要在 WSL 中生成；如果你以后希望在本机拉取/上传 GitHub 仓库，则需要在本机生成密钥对。
 
 6. 验证配置是否成功
 
 ```bash
-user@linux:~# ssh -T git@github.com
+user@linux:~$ ssh -T git@github.com
 Hi <用户名>! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-如果没有得到期望的输出，请检查密钥对配置，或参考[这个文档](/appendix/misc-qa)
+如果没有得到期望的输出，请检查密钥对配置，或参考[这个文档](/appendix/misc-qa)，如果仍有问题，请联系助教。
 
-### GitHub 基本操作
+### Git Remote 基本操作
 
 - `git clone`
 
@@ -346,18 +361,18 @@ Hi <用户名>! You've successfully authenticated, but GitHub does not provide s
 
 - `git pull`
 
-  拉取最新的代码。这个操作相当于 `git fetch（将远程分支拉到本地）` + `git merge（将远程分支合并入本地分支）`
+  拉取最新的代码。这个操作相当于 `git fetch`（将远程分支拉到本地） + `git merge`（将远程分支合并入本地分支）
 
 - `git push`
 
   将本地仓库的修改推送到远程仓库。
 
 :::details 示例
-如果你想修正我们课程网页上的错误，可以在 GitHub 点进我们的仓库，点击 `Code`，再选择 `SSH`，复制这串 URL。
+如果你想修正我们课程网页上的错误，可以在 GitHub fork 我们的仓库到你自己的仓库，然后点击 `Code`，再选择 `SSH`，复制这串 URL。
 
   ![1](github1.png)
 
-在终端运行 `git clone git@github.com:ICS-25Fall-FDU/ICS-25Fall-FDU.github.io.git`
+在终端运行 `git clone git@github.com:ICS-25Fall-FDU/ICS-25Fall-FDU.github.io.git`（你需要替换成你自己仓库的地址）
 
 ```bash
 user@linux:~# git clone git@github.com:ICS-25Fall-FDU/ICS-25Fall-FDU.github.io.git
@@ -373,7 +388,7 @@ Resolving deltas: 100% (143/143), done.
 下一个 lab 发布时，我们的网页仓库会有更新，需要运行 `git pull`
 
 ```bash
-linux@user:~/ICS-25Fall-FDU.github.io# git pull
+user@linux:~/ICS-25Fall-FDU.github.io# git pull
 Updating 67568b7..10fcbcf
 Fast-forward
  .gitignore                   |  3 +-
@@ -383,7 +398,7 @@ Fast-forward
  create mode 100644 docs/appendix/misc-qa.md
 ```
 
-如果你在本地仓库新增了 commit，你就可以 `git push`。当然，对于这个仓库你并没有 push 权限。你需要先 fork 该仓库，将本地修改 push 到你自己的仓库，然后向我们的仓库发起 pull request。
+如果你在自己的本地仓库提交了 commit，你就可以执行 `git push`，然后在 GitHub 上向我们的仓库发起 Pull Request，此部分可能会给你的实验附加分。
 :::
 
 ## 加入 GitHub Classroom
@@ -416,9 +431,9 @@ Fast-forward
 
 ## 实验任务
 
-1. 认真阅读文档，学习 Git 的基本用法。
+1. 认真阅读文档，学习 Git 的基本用法，并在报告中回答文档中的问题。（15 分）
 2. 加入 GitHub Classroom。
-3. 克隆你的个人远程仓库，完成 `main.c` 文件中的 `TODO` 部分并进行一次 commit。（50分）
+3. 克隆你的个人远程仓库，完成 `main.c` 文件中的 `TODO` 部分并进行一次 commit。（50 分）
     > [!info]
     >
     > 只要填入任意字符串就算完成，当然你也可以随意发挥（程序的正确性不纳入计分，有修改即可）。
@@ -431,19 +446,25 @@ Fast-forward
     > make clean
     > ```
 
-4. 学习 Git 分支管理，新建 `feature` 分支，在该分支以及 `main` 分支上对 `main.c` 分别进行一次修改与提交（10分）。
+4. 在下面的三个网页中任选其二进行阅读，简要概括其内容，并谈谈你对“为什么要学习 Git”这个问题的理解。（15 分）
 
-    随后将 `feature` 分支 merge 到 `main` 分支（即切换回 main 分支执行 `git merge feature`）。
+    - [Commit Message 规范](https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
+    - [Git Flow 分支控制](https://www.dafaycoding.com/article/git-gif-flow)
+    - [语义化版本](https://semver.org/lang/zh-CN/)
+
+5. 学习 Git 分支管理，新建 `feature` 分支，在该分支以及 `main` 分支上对 `main.c` 分别进行一次修改与提交（10 分）。
+
+    随后将 `feature` 分支 merge 到 `main` 分支（即切换回 main 分支执行 `git merge feature`），并处理发生的合并冲突（10 分）。
 
     > [!important]
     >
-    > 在两个分支上的提交需要满足：在 `main` 分支合并时会出现冲突。请你解决这个冲突，并在实验报告里截图表明你遇到并解决了冲突。（20分）
-    > > [!tip]
-    > > 请阅读 `git merge` 部分，思考如何修改 `main.c` 会出现冲突。
-    > >
-    > > 如果你两次提交之后合并没有出现冲突，不必担心，你可以重复提交与合并而不用撤回之前的提交，直到出现冲突并解决。
+    > 在两个分支上的提交必须要满足：在 `main` 分支合并时会出现冲突。请你解决这个冲突，并在实验报告里截图表明你遇到并解决了冲突。
+    > 
+    > 请阅读 `git merge` 部分，思考如何修改 `main.c` 会出现冲突。
+    >
+    > 如果你两次提交之后合并没有出现冲突，不必担心，你可以不用撤回之前的提交，而是继续尝试提交修改并 merge，直到出现冲突并解决。
 
-5. 在 `main` 分支提交一份实验报告（10分），格式要求为 `PDF` 或 `Markdown`。内容包括
+6. 在 `main` 分支提交一份实验报告（实验报告单独评分），格式要求为 `PDF` 或 `Markdown`。内容包括：
     - 你的实验步骤
     - 必要的截图
     - 你的建议（可选）
@@ -459,22 +480,27 @@ Fast-forward
 
 ## 提交
 
-**提交方式**：在本地仓库完成上述所有提交后，在 main 分支执行 `git push`（当然你也可以每提交一次就 push）。
+提交方式：在本地仓库完成上述所有实验后，将资料和报告都上传到 main 分支，并提交到 GitHub。
 
-**截止时间**：10 月 8 日 23:59。逾期将扣除部分分数。
+截止时间：10 月 8 日 23:59。逾期将扣除部分分数。
 
 > [!info] 写在最后的话
 >
 > 作为第一次作业，这个文档的字数过多，但实际的任务很少。如果你对 Git 感兴趣可以认真读完，甚至在网上寻找其他学习资源。
 >
-> 如果你觉得内容过于冗长，只需对照实验任务针对性地学习重点。完成后续实验最简单的流程就是 `git clone` -> 写完所有代码 -> `git add -A && git commit -m "xxx" && git push`。
+> 如果你觉得内容过于冗长，只需对照实验任务针对性地学习重点。完成后续其它 Lab 最简单的流程就是 `git clone` -> 写完所有代码 -> `git add -A && git commit -m "xxx" && git push`。
 
 ## 学习资源
 
-- [Pro Git](https://git-scm.com/book/en/v2)  /  [Pro Git中文版](https://git-scm.com/book/zh/v2)，推荐阅读1-3章
-- [学习git的在线游戏](https://learngitbranching.js.org/)，挺好玩的
+- [Pro Git](https://git-scm.com/book/en/v2)  /  [Pro Git 中文版](https://git-scm.com/book/zh/v2)，推荐阅读1-3章
+- [学习 Git 的在线游戏](https://learngitbranching.js.org/)，挺好玩的
 - [ohshitgit](https://ohshitgit.com/)，简短的介绍了如何从 Git 错误中恢复
 - [Git for Computer Scientists](https://eagain.net/articles/git-for-computer-scientists/)，简短的介绍了 Git 的数据模型
 - [git-from-the-bottom-up](https://jwiegley.github.io/git-from-the-bottom-up/)，详细的介绍了 Git 的实现细节
 - [explain-git-in-simple-words](https://xosh.org/explain-git-in-simple-words/)，如其名
-- [用动图展示10大Git命令](https://zhuanlan.zhihu.com/p/132573100)，一篇精美文章
+- [用动图展示 10 大 Git 命令](https://zhuanlan.zhihu.com/p/132573100)，一篇精美文章
+
+> [!info] 本 Lab 负责助教
+>
+> - [徐厚泽](mailto:houzexu22@m.fudan.edu.cn)
+> - [朱程炀](mailto:i@zecyel.xyz)
