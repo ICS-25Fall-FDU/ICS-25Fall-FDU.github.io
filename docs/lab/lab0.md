@@ -336,7 +336,7 @@ GitHub 是一个基于 Git 的代码托管平台，你可以将你的本地 Git 
 
     > [!note]
     >
-    > SSH key 的生成参考[这个文档](/appendix/ssh-server/#_2-生成-ssh-密钥对)
+    > SSH key 的生成参考[这个文档](/appendix/ssh-server)
     >
     > 如果你在服务器上实验，需要在服务器上生成密钥对；如果在自己电脑的虚拟机上实验，需要在 WSL 中生成；如果你以后希望在本机拉取/上传 GitHub 仓库，则需要在本机生成密钥对。
 
