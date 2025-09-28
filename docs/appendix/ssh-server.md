@@ -44,7 +44,7 @@ ssh-keygen
 
 > [!tip]
 >
->在有些网站上，他们会宣称使用上面的方式生成了 RSA 密钥对，这是基于[比较老的SSH协议规范](https://www.rfc-editor.org/rfc/rfc4252)。自[OpenSSH 9.5](https://www.openssh.com/releasenotes.html#9.5)起，使用上述方法生成的密钥对默认是 Ed25519 加密的。
+>在有些网站上，他们会宣称使用上面的方式生成了 RSA 密钥对，这是基于[比较老的 SSH 协议规范](https://www.rfc-editor.org/rfc/rfc4252)。自 [OpenSSH 9.5](https://www.openssh.com/releasenotes.html#9.5)起，使用上述方法生成的密钥对默认是 Ed25519 加密的。
 
 执行上述命令后，系统会提示你进行一系列配置。除非你有配置 passphrase 的需求并且知道自己在做什么，否则连按三个回车即可。
 
@@ -150,11 +150,10 @@ rm -rf ~/.ssh/*
 - 删除特定的 SSH 密钥对，使用
 
 ```bash
-cd .ssh
-dir
+ls ~/.ssh
 ```
 
-此时终端会显示 SSH 中存储的信息，例如：
+此时终端会显示 `~/.ssh` 目录中存储的文件，例如：
 
 ```bash
 id_rsa  id_rsa.pub  id_ed25519  id_ed25519.pub  known_hosts  known_hosts.old  authorized_keys
