@@ -1,8 +1,8 @@
-# Lab1 -- DataLab
+# Lab1: DataLab
 
 > author: 蔡亦扬、项正豪
 
-## 一、实验简介
+## 实验简介
 
 CSAPP 第一章配套实验。
 
@@ -12,17 +12,15 @@ CSAPP 第一章配套实验。
 
 荣誉部分虽然占分，但是占分并不高，大家可以自己决定要不要做荣誉部分。生活就像海洋，只有意志坚强的人才能到达彼岸！
 
-
-
-## 二、部署实验环境
+## 部署实验环境
 
 ### （1）下载
 
-从 `github classroom` 拉取`ICS2025_datalab` 文件夹，其中的内容就是本次实验用到的的文件了，拉取指令如下：
+从 `github classroom` 拉取`lab1-datalab-xxx` 文件夹，其中的内容就是本次实验用到的的文件了，拉取指令如下：
 
 ```shell
-git clone xxx  # 将 xxx 替换为对应链接
-cd ICS2025_datalab
+git clone git@github.com:ICS-25Fall-FDU/lab1-datalab-xxx.git  # 将 xxx 替换为你的 GitHub 用户名
+cd lab1-datalab-xxx
 ```
 
 ### （2）准备工作
@@ -43,8 +41,6 @@ gcc -v
 sudo apt-get install gcc
 ```
 
-
-
 #### 确保已安装了 make
 
 检查是否安装 make，在终端输入：
@@ -58,10 +54,13 @@ make -v
 ```shell
 sudo apt-get update
 sudo apt-get install make
-sudo apt-get install libc6 libc6-dev libc6-dev-i386
 ```
 
+本实验需要用到以下 C 标准库：
 
+```shell
+sudo apt-get install libc6 libc6-dev libc6-dev-i386
+```
 
 #### 确保实验文件能正常 make 并运行测试
 
@@ -96,8 +95,6 @@ make all
 sudo apt install gcc-multilib
 ```
 
-
-
 #### 确保 dlc（data lab compiler）能正常执行
 
 依然在 `datalab/`  目录下，
@@ -109,16 +106,16 @@ sudo apt install gcc-multilib
 ```
 
 如果遇到 `./dlc: Permission denied`，说明没有当前文件的执行权限，执行:
+
 ```shell
 chmod +x dlc
 ```
+
 增加执行权限。
 
 如果执行立即结束并且没有任何反馈，则没有问题。
 
-
-
-## 三、实验提示与说明
+## 实验提示与说明
 
 ### （1）如何入手
 
@@ -130,8 +127,6 @@ chmod +x dlc
 
 上面的两个文件请务必仔细阅读。
 
-
-
 注意到，每一个谜题包含了如下信息：
 
 * 能使用的运算符。
@@ -139,8 +134,6 @@ chmod +x dlc
 * 能使用的常数的值域范围。
 * 变量类型。
 * 能否使用控制语句（如 `if` ）等。
-
-
 
 ### （2）测试
 
@@ -166,9 +159,7 @@ chmod +x dlc
 
 * 你可以利用上 `./ishow` 和 `./fshow` 来帮助你调试（用法见 `README`）。
 
-
-
-## 四、提交实验
+## 提交实验
 
 ### （1）内容要求
 
@@ -180,43 +171,49 @@ chmod +x dlc
 
 * 你在终端中执行 `./dlc -e bits.c` 后的截图。
 * 你在终端中执行 `./btest` 后的截图。
-* 描述你实现每个函数的思路。bits.c中不要求给自己的代码写注释（写了也无妨）
+* 描述你实现每个函数的思路。`bits.c` 中不要求给自己的代码写注释（写了也无妨）
 * 如果有，请务必在报告中列出引用的内容以及参考的资料。
 * 对本实验的感受（可选）。
 * 对助教们的建议（可选）。
 
 ### （2）格式要求
 
-可提交 `.md` 文件或者 `.pdf` 文件。不要提交 `.doc` 或 `.docx` 文件。  
+可提交 `.md` 文件或者 `.pdf` 文件。请勿提交 `.doc` 或 `.docx` 文件。  
 （如果提交 `.md` 文件，请确保助教能同时看到你报告中的截图！）
+
+> [!tip]
+>
+> 在你的 Markdown 报告中插入图片时，使用 **相对路径** 而不是绝对路径。如果你不确定这一步是否正确，请进入你的远程仓库预览你的报告。
 
 ### （3）上传
 
-在终端运行以下指令：
+打开终端，**在 `lab1-datalab-xxx` 路径下** 执行以下指令：
 
 ```shell
-git add -A
 # 提交当前文件夹下的所有更改到暂存区
-git commit -m "xxx(可以是你的提交注释)"
+git add -A
+
 # 将暂存区的所有更改提交到本地仓库
-git push
+git commit -m "xxx(可以是你的提交注释)"
+
 # 将本地仓库推送到远程
+git push
 ```
 
-### （4）打分规则
+### （4）评分规则
 
 * 实验报告要求简洁清晰，不必追求字数，描述清楚思路即可
 * 对每道谜题请先做思考，不要立即使用搜索引擎。
 * 不允许抄袭其它人的代码，一旦发现，零分处理。
 
+## 参考资料
 
+* [CMU 原版 Lab](http://csapp.cs.cmu.edu/3e/labs.html)
+* 本文档编写时参考了24年的实验文档 。
 
-## 五、参考资料
-
-* http://csapp.cs.cmu.edu/3e/labs.html （lab 来源，本实验相较原文件有改动）
-* 本文档编写时参考了 24 年的实验文档 。
-* 负责助教:
-  * 蔡亦扬 caiyy23@m.fudan.edu.cn
-  * 项正豪 zhxiang23@m.fudan.edu.cn
-
-**特别鸣谢**：24 Fall ICS助教李增昊
+> [!info] 本 Lab 负责助教
+>
+> * [蔡亦扬](mailto:caiyy23@m.fudan.edu.cn)
+> * [项正豪](mailto:zhxiang23@m.fudan.edu.cn)
+>
+> **特别鸣谢**：24 年秋学期 ICS 助教李增昊
