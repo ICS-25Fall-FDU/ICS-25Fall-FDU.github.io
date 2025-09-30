@@ -204,3 +204,5 @@ git push
 > * [项正豪](mailto:zhxiang23@m.fudan.edu.cn)
 >
 > **特别鸣谢**：24 年秋学期 ICS 助教李增昊
+> 
+> 同时感谢 @徐厚泽 助教往本实验中加入了 `bitReverse` 题目，感谢 @朱程炀 助教往本实验中加入了 `float_inv` 题目。
