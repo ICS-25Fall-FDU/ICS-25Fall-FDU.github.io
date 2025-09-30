@@ -64,13 +64,11 @@ sudo apt-get install libc6 libc6-dev libc6-dev-i386
 
 #### 确保实验文件能正常 make 并运行测试
 
-在终端中进入 `datalab/`  文件夹目录。
-
 键入 `ls` 查看内容，你应当看到如下文件：
 
 ```shell
-Driverhdrs.pm  Makefile  bits.c  btest.c  decl.c  driver.pl  ishow.c
-Driverlib.pm   README    bits.h  btest.h  dlc     fshow.c    tests.c
+Driverhdrs.pm  Driverlib.pm  Makefile  README  bits.c  bits.h  btest  btest.c
+btest.h  decl.c  dlc  driver.pl  fshow  fshow.c  ishow  ishow.c  test.sh  tests.c
 ```
 
 在终端中依次执行如下命令，以生成可执行文件并执行：
@@ -96,8 +94,6 @@ sudo apt install gcc-multilib
 ```
 
 #### 确保 dlc（data lab compiler）能正常执行
-
-依然在 `datalab/`  目录下，
 
 执行：
 
