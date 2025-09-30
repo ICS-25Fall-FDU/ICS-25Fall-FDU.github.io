@@ -11,6 +11,8 @@ next: false
 ## 📰 News
 
 * **Sep. 12, 2025** [ICS 实验入门手册](/lab/manual)发布
+* **Sep. 23, 2025** [Lab0: GitLab](/lab/lab0)发布
+* **Sep. 30, 2025** [Lab1: DataLab](/lab/lab1)发布
 
 ## 🔍 Just for Fun
 
