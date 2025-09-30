@@ -12,7 +12,7 @@ CSAPP 第一章配套实验。
 
 ### 领取作业并克隆仓库到本地
 
-从 `GitHub Classroom` 拉取 `lab1-datalab-xxx` 仓库，其中的内容就是本次实验用到的的文件了，拉取指令如下：
+从 `GitHub Classroom` 拉取 `lab1-datalab-xxx` 仓库，其中的内容就是本次实验用到的文件了，拉取指令如下：
 
 ```shell
 git clone git@github.com:ICS-25Fall-FDU/lab1-datalab-xxx.git  # 将 xxx 替换为你的 GitHub 用户名
