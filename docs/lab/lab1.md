@@ -170,7 +170,7 @@ chmod +x dlc
 
 > [!tip]
 >
-> 在你的 Markdown 报告中插入图片时，使用 **相对路径** 并将图片一并上传到 GitHub。如果你不确定这一步是否正确，请进入你的远程仓库预览你的报告。
+> 在你的 Markdown 报告中插入图片时，请将图片文件放在仓库的 `images/` 或 `assets/` 文件夹下，并使用 **相对路径**（如 `images/screenshot.png`）插入图片。常见支持的图片格式有 PNG、JPG 和 GIF。插入图片的 Markdown 语法示例：`![截图说明](images/screenshot.png)`。上传报告时，请确保图片文件已一并上传到 GitHub。如果你不确定这一步是否正确，请进入你的远程仓库预览你的报告。
 
 ### 上传
 
