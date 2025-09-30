@@ -1,7 +1,5 @@
 # Lab1: DataLab
 
-> author: 蔡亦扬、项正豪
-
 ## 实验简介
 
 CSAPP 第一章配套实验。
