@@ -49,7 +49,7 @@
 
 #### 从GitHub Classroom拉取实验仓库
 
-推荐使用ssh方式克隆仓库（想必你已经很熟悉这一点）。
+推荐使用ssh方式克隆仓库（想必你已经熟悉这一点）。
 
 ```shell
 git clone git@github.com:ICS-25Fall-FDU/lab2-bomblab-xxx.git # 将xxx替换为自己的用户名
@@ -83,7 +83,7 @@ cd lab2-bomblab-xxx
 
 > [!warning]
 >
-> 助教会根据每个人的学号来判断答案；==漏填学号或者填错学号导致的错误助教概不负责。==
+> 助教会根据每个人的学号来判断答案；**漏填学号或者填错学号导致的错误助教概不负责。**
 
 2. **设置测试关卡：**`test_phase = 1,2,3,4,5,6` 
 
