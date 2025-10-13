@@ -24,7 +24,7 @@
 - **`gdb-tutor`**：一个旨在帮助各位学习和练习使用 GDB 的可执行文件。侧重于实验所需的调试技巧。
 - **`gdb-tutor.c`**：与 `gdb-tutor` 可执行文件对应的源代码。
 
-**使用方法：**直接在`./src/gdb-tutor`目录下执行命令：
+**使用方法：** 直接在`./src/gdb-tutor`目录下执行命令：
 
 ```shell
  ./gdb-tutor
