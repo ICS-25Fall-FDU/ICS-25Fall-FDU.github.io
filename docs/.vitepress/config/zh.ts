@@ -57,8 +57,9 @@ function sidebarGuide(): DefaultTheme.Sidebar {
       text: '实验',
       items: [
         { text: 'ICS 实验入门手册', link: '/lab/manual' },
-        { text: 'Lab0', link: '/lab/lab0' },
-        { text: 'Lab1', link: '/lab/lab1' }
+        { text: 'Lab0: GitLab', link: '/lab/lab0' },
+        { text: 'Lab1: DataLab', link: '/lab/lab1' },
+        { text: 'Lab2: BombLab', link: '/lab/lab2' }
       ]
     },
     {
