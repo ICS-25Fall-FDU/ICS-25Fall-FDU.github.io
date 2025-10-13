@@ -14,16 +14,16 @@
 
 ---
 
-你可能的身份： 
-
-- engineer
-- professor
-- undergraduate
-- commander
-- spy
-- soldier
-- wanderer
-- pacifist
+| 你可能的身份    |
+| --------------- |
+| 0 engineer      |
+| 1 professor     |
+| 2 undergraduate |
+| 3 commander     |
+| 4 spy           |
+| 5 soldier       |
+| 6 wanderer      |
+| 7 pacifist      |
 
 ## 2 实验组成
 
@@ -464,8 +464,6 @@ cat password.txt - | ./bomb
 
 ---
 
-
-
 ## 6 提交要求
 
 ### 6.1 必须文件
@@ -528,6 +526,7 @@ git push
 
 - 原版 Lab：<http://csapp.cs.cmu.edu/3e/labs.html> 
 - 本实验参考 22、23、24年的实验开发
+- 鸣谢：gdb-tutor作者 y^2^
 
 
 
