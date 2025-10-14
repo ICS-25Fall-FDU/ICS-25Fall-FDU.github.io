@@ -208,14 +208,7 @@ GDB 作为调试器是在你的程序跑起来之后才发挥主要作用的。�
 
 #### 使用objdump获得汇编代码
 
-objdump 便是本次要介绍的查看目标文件或者可执行的目标文件的汇编代码的常用反汇编工具。其安装非常简单。(在 Ubuntu 系统中，`objdump` 工具通常已经随 `binutils` 软件包预装，因此我们需要安装`binutils`)
-
-```sh
-sudo apt update
-sudo apt install binutils
-```
-
-`objdump --help` 会打印出 objdump 的所有用法，并且会给出精简的解释。
+objdump 便是本次要介绍的查看目标文件或者可执行的目标文件的汇编代码的常用反汇编工具。其安装非常简单。
 
 如果你直接输入 `objdump -d ./bomb > bomb.S` 以获得反汇编文件 `bomb.S`，得到的将是对整个 bomb++ 文件的反汇编，它将会极长从而无法阅读（因为所有关卡的代码全部被包含在内）。因此，我们在使用 `objdump` 时加入参数 `--disassemble=<function_name>`，便可以仅输出对应函数的汇编代码。
 
@@ -228,6 +221,8 @@ objdump -d --disassemble=phase_5 ./bomb++ > phase_5.S
 以上命令会将 `phase_5` 这一函数的汇编代码放入 `phase_5.S` 中。至此你便可以打开你反汇编得到的`.S`文件，开始快乐阅读汇编代码了！
 
 > 你可以尝试在`objdump`后加上 `-D` 和/或 `-x` 和/或 `-C`，就像上面出现的`-d`一样。你可以通过搜索或读文档的方式了解这会导致什么后果；TA相信这几个参数会对你的实验有很大帮助！
+
+`objdump --help` 会打印出 objdump 的所有用法，并且会给出精简的解释。
 
 #### 设置汇编语言风格（Intel/AT&T）
 
