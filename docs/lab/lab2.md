@@ -336,7 +336,7 @@ int recursion(int x){  #求斐波那契数
 
 000000000000122c <recursion(int)>:
 push   %rbp                      #保存 rbp
-push   %rbx                      #保存 ebx
+push   %rbx                      #保存 rbx
 mov    %edi,%ebx                 #保存第一个参数x，因为x和rdi寄存器后续函数都要使用，因此将x保存在新的寄存器中（这里是ebx），防止后续的函数将rdi中存放的x覆盖掉，而ebx因为是callee-save，因此提前保存了它
 cmp    $0x1,%edi                 
 jle    1258 <recursion(int)+0x2c> # 小于等于 1 则跳转，相当于 x < 2
