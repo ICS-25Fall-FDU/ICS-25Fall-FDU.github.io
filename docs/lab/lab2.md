@@ -1,6 +1,6 @@
 # Lab2: BombLab
 
-> Deadline: 2025-10-28 23:59:59
+> Deadline: 2025-10-30 23:59:59
 
 ## 1. 实验概述
 
@@ -434,7 +434,7 @@ callq  *%rdx                      # 调用 rdx 位置处的函数（*号只是�
 在拆弹过程中，如果你已经将所有正确口令保存在 `password.txt` 中，可以使用这条输入重定向命令一次性通过所有关卡：
 
 ```sh
-./bomb < password.txt
+./bomb++ < password.txt
 ```
 
 #### 管道（Pipe）
@@ -449,7 +449,7 @@ cat 1.txt | grep CH     # 筛选包含"CH"的行
 如果你已经知道前某几个阶段的口令并保存在 `password.txt` 中，但不想在后续阶段中一遍遍手动输入，就可以用 `cat` 打开那个文本文件以及标准输入，然后利用管道机制将这两个文件的内容导向bomb+的输入：
 
 ```sh
-cat password.txt - | ./bomb
+cat password.txt - | ./bomb++
 ```
 
 这里的 `-` 表示标准输入。程序会先读取 `password.txt` 中的内容，然后等待你输入剩余部分，无需重复输入已知口令。
@@ -490,7 +490,7 @@ cat password.txt - | ./bomb
 >
 >   6. 请不要忘记自己的身份 （提示：文档开头的**身份牌顺序**或许对你很重要）
 >
->      ### ==WHO ARE YOU???????== 
+>      ### WHO ARE YOU???????
 
 ---
 
@@ -502,9 +502,9 @@ cat password.txt - | ./bomb
 
 - `password.txt`：
   - 所有关卡的正确口令
-  - 将 `story_mode` 设置为 `false` 
 - `lab2_学号_姓名.pdf`：实验报告（注：只接受 PDF 格式提交的实验报告！！）
 - `config.txt`：正确配置的配置文件
+  - 将 `story_mode` 设置为 `false` 
 
 ### 6.2 实验报告内容
 
