@@ -562,7 +562,7 @@ git push
 
 - CMU 原版 Lab：<http://csapp.cs.cmu.edu/3e/labs.html> 
 - 本实验参考 22、23、24年的实验开发
-- 鸣谢：gdb-tutor作者 y^2^ 
+- 鸣谢：gdb-tutor作者 y<sup>2</sup>
 
 
 
