@@ -241,7 +241,7 @@ objdump -d --disassemble=phase_5 ./bomb++ > phase_5.S
 
 本课程上课教学时使用的语法是 AT&T，这也是 objdump 默认使用的语法。但如果你~~并不想看一堆%~~ 想试试 Intel 语法那也十分推荐，因为这是安全研究人员更常用的一种语法。想让 objdump 输出语法变为 Intel，只需要给 objdump 添加参数 `-M intel`。
 
-> 如果使用 pwndgb，由于汇编代码会在 pwndbg 界面显示，故也请自行设置好你希望阅读的汇编语言风格。
+> 如果使用 pwndbg，由于汇编代码会在 pwndbg 界面显示，故也请自行设置好你希望阅读的汇编语言风格。
 
 ### 4.4 寄存器相关
 
