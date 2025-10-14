@@ -527,7 +527,7 @@ cat password.txt - | ./bomb
 ```shell
 # 在以下文件的根目录下添加以下三个内容到暂存区
 # 如果无法成功添加，请检查终端中的当前目录和以下文件路径是否对应
-git add password.txt lab2_<学号>.pdf config.txt
+git add password.txt lab2_<学号>_<姓名>.pdf config.txt
 
 # 将暂存区的所有更改提交到本地仓库
 git commit -m "xxx(你的提交注释)"
