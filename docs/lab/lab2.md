@@ -173,6 +173,8 @@ Secret. ████
 
 GDB（GNU symbolic debugger），Linux 下常用的程序调试器。本次 lab 的主力之一。所谓调试，就是让代码一步一步慢慢执行，跟踪程序的运行过程。比如，可以让程序停在某个地方，查看当前所有变量的值，或者内存中的数据；也可以让程序一次只执行一条或者几条语句，看看程序到底执行了哪些代码。
 
+> 小提示：用 GDB 装载程序后运行程序，程序很可能会停留在等待输入的地方，`gdb>`提示符看起来消失了。此时可以按`^+C` (Ctrl+C) 中断程序，回到调试模式。
+
 GDB 作为调试器是在你的程序跑起来之后才发挥主要作用的。用法可以参考 `gdb-tutor` 实操上手，也可以自行上网学习。你也可以直接通过命令 `man gdb` (man 指 manual) 在终端查看其使用指导，或者上网搜索来获得其更详尽的用法。或许也可以去网上找一个 gdb cheatsheet（小抄），方便你查找想用的指令。在此，我们也给出一个挺好的英文教程：[Tudor's gdb crash course](https://users.umiacs.umd.edu/~tdumitra/courses/ENEE757/Fall15/misc/gdb_tutorial.html) 
 
 以下是一些 GDB 常用指令：
