@@ -342,7 +342,7 @@ cmp    $0x1,%edi
 jle    1258 <recursion(int)+0x2c> # 小于等于 1 则跳转，相当于 x < 2
 lea    -0x1(%rdi),%edi           # x-1
 callq  122c <recursion(int)>     # recursion(x-1)
-mov    %eax,%ebp                # 将得到的返回值放在rbp中，因为rbp是callee-save，要提前保存
+mov    %eax,%ebp                # 将得到的返回值放在ebp中，因为ebp是callee-save，要提前保存
 lea    -0x2(%rbx),%edi          # x-2，这里也用到了x，因此需要提前保存x
 callq  122c <recursion(int)>
 ...
