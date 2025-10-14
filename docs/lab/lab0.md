@@ -328,11 +328,11 @@ GitHub 是一个基于 Git 的代码托管平台，你可以将你的本地 Git 
 2. 打开 Github 并登录自己的账号。
 3. 点击右上角头像，进入 Settings ：
 
-    ![1](ssh-key1.png)
+    ![1](gitlab/ssh-key1.png)
 
 4. 进入页面后，在左侧选择 `SSH and GPG keys`, 在右侧点击 `New SSH Key`。
 
-    ![2](ssh-key2.png)
+    ![2](gitlab/ssh-key2.png)
 
 5. 在框中粘贴入自己复制的公钥，点击 `Add SSH key` 即可。
 
@@ -372,7 +372,7 @@ Hi <用户名>! You've successfully authenticated, but GitHub does not provide s
 :::details 示例
 如果你想修正我们课程网页上的错误，可以在 GitHub fork 我们的仓库到你自己的仓库，然后点击 `Code`，再选择 `SSH`，复制这串 URL。
 
-  ![1](github1.png)
+  ![1](gitlab/github1.png)
 
 在终端运行 `git clone git@github.com:ICS-25Fall-FDU/ICS-25Fall-FDU.github.io.git`（你需要替换成你自己仓库的地址）
 
@@ -414,7 +414,7 @@ Fast-forward
     > 如果链接无法访问，请尝试使用 [Watt Toolkit](/appendix/watt_toolkit)，如果仍然无法访问请联系助教。
 
 2. 你将跳转到以下界面：
-  ![1](classroom1.png)
+  ![1](gitlab/classroom1.png)
 
 3. 选择你的名字。
 
@@ -423,13 +423,13 @@ Fast-forward
     > 请勿选择其他同学的名字，如果发现自己的名字已被使用请及时联系 [houzexu22@m.fudan.edu.cn](mailto:houzexu22@m.fudan.edu.cn)。
 
 4. 点击 `Accept this assignment`
-  ![2](classroom2.png)
+  ![2](gitlab/classroom2.png)
 
 5. 你将看到以下界面，这里的 URL （形如`https://github.com/ICS-25Fall-FDU/lab0-gitlab-<username>`）就是你个人本次作业的远程仓库。
-  ![3](classroom3.png)
+  ![3](gitlab/classroom3.png)
 
 6. 点进远程仓库 URL 获取 remote URL（`git@github.com` 开头），这将是你 `git clone` 的 URL。
-  ![4](classroom4.png)
+  ![4](gitlab/classroom4.png)
 
 ## 实验任务
 
@@ -479,7 +479,7 @@ Fast-forward
     > 如果你是 Word 爱好者，请你将它导出为 PDF。
     >
     > 你可以在自己电脑上任一位置用 Word 写实验报告并导出，然后把 PDF 文件拖拽复制到 VS Code 编辑器左侧的目录下。
-    > ![VS Code](vscode.png)
+    > ![VS Code](gitlab/vscode.png)
 
 ## 提交
 
