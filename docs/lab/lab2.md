@@ -2,6 +2,8 @@
 
 > Deadline: 2025-10-30 23:59:59
 
+作业领取链接：https://classroom.github.com/assignment-invitations/6a4c823acf235c7a82c4fd8c8f5c646c
+
 ## 1. 实验概述
 
 本实验为 CSAPP 第三章配套实验。
