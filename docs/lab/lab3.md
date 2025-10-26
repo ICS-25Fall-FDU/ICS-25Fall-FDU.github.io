@@ -99,10 +99,7 @@ void foo() {
 
 1. 阅读 `dark-calc.c` 源代码，理解程序的逻辑，找到漏洞所在函数，计算出溢出所需要的字符数；
 2. 使用 `gdb` 调试程序，将断点设置在漏洞所在函数的 `ret` 语句处，观察此时各个寄存器的值；
-3. 结合你的观察，使用 `payload.py` 构造一个恰当的 payload，使得通过 `dark-calc` 程序执行 `./malware`；
-
-> [!tip]
-> **`payload.py` 作为评分依据。**
+3. 结合你的观察，使用 `payload.py` 构造一个恰当的 payload，使得通过 `dark-calc` 程序执行 `./malware`。 **`payload.py` 作为自动评分依据。**
 
 #### 提示
 
@@ -139,6 +136,7 @@ void foo() {
 
 > [!tip]
 >
+> 注意 cmd 字符串对应地址处的值在输入完后不变；
 > 我们的目标类似于执行 `system("./malware")`，如果你已经构造成功了 payload 使程序执行 `system("./malware")`，但程序在 `system` 函数的内部崩溃了，这在我们的预期内。**也就是说，只需要见到 `You have successfully detonated the bomb! Congratulations!` 这一行就算通过实验。**
 > 造成这种情况的原因是：`system` 内部某些汇编语句对栈的对齐要求很高，如果没有对齐至 0x10，就会导致程序崩溃。如果你使用 GDB 进行调试，你就可以看到这几条非常“挑剔”的汇编指令。
 > 在正常执行一个函数时，`rsp` 寄存器是向 0x10 对齐的；调用某一个函数时使用的是 `call` 指令，会往栈上压入一个 8 字节的返回地址（这里就破坏了对齐），然后跳转到函数的起始位置。因此，每个函数都会假设自己刚刚被调用时，`rsp` 寄存器是不向 0x10 对齐的。
@@ -173,15 +171,20 @@ void foo() {
 
 ### 实验任务
 
-**Task 2.1** `dark-calc` 有一个未使用的 `grade_eval` 函数。尝试在阅读代码后，通过 `payload_dark.py` 构建新的 payload，导入到程序 `dark-calc` 执行 `grade_eval`，输出大家理想的成绩！
+**Task 2.1** `dark-calc` 有一个未使用的 `grade_eval` 函数。尝试在阅读代码后，通过 `payload_dark.py` 构建新的 payload，**在 GDB 中**导入到程序 `dark-calc` 执行 `grade_eval`，输出大家理想的成绩！**提交 GDB 运行结果截图（有输出语句 `Hope A will be your grade!` 即可）与 `payload_dark.py` 作为评分依据。无自动评分。**
+
+**Problem 2.1** 查询资料，解释为什么不存在<s>（TA没有发现）</s>通过直接执行 `./dark-calc < payload_dark` 或 `python3 payload_dark.py | ./dark-calc` 执行 `grade_eval` 的方法。
 
 > [!tip]
 >
-> **`payload_dark.py` 作为评分依据。**
-> 我们需要在栈空间内执行代码；
-> 期望效果是**赋值输入参数**并**调用函数**；
-> 有输出语句 `Hope it will be your grade...`即可；
-> 依然可以用与 Task 1.1 相似的方法保存 payload 并进行调试；
+> 可以用与 Task 1.1 相似的方法保存 payload 并进行调试。
+>
+> 在 GDB 中，默认程序的栈空间位置固定，我们需要在栈空间内执行代码，期望效果是**赋值输入参数**并**调用函数**。
+>
+> 大家学过 CSAPP，打过 BombLab，想必对常用 x86-64 汇编指令的机器码有一些了解，此处给出 mov 和 jmp 指令的机器码：
+> - 64 位立即数移动 `mov $imm, %rxx`：`48 c7 [Mod+Reg+R/M](1 byte) [imm](4 byte)`，`Mod` 指定寄存器模式（`11` 为寄存器寻址），`Reg` 源操作数（这里是立即数，所以置为 0），`R/M` 指定目标寄存器；
+> - 跳转到 `rxx` 寄存器指向的地址`jmp *%rxx`：`ff [Mod+Reg+R/M](1 byte)`， `Mod` 指定寄存器模式（`11` 为寄存器寻址），`Reg` 设为 `100` 指定此指令为 `jmp` 指令，`R/M` 指定目标寄存器；
+> - <s>善用人工智能工具编写汇编代码。</s>
 
 ## 三、栈溢出的防御
 
@@ -200,7 +203,7 @@ gcc -fno-pie -no-pie -o dark-calc-my dark-calc.c
 1. 借助 GDB 动态调试，使用刚刚的 payload 攻击程序，观察程序的行为；
 2. 借助 objdump 静态分析，观察程序新增加的汇编代码，通过搜索等手段理解其意义。
 
-你需要在实验报告中描述你对这种防御机制原理的理解，并尝试回答两个问题：
+你需要在实验报告中**描述你对这种防御机制原理的理解**，并尝试回答两个问题：
 
 **Problem 3.1** 这种防御机制是否能够彻底“防御”栈溢出漏洞？
 
@@ -420,8 +423,6 @@ catch{
 ```
 
 在本lab中，我们采用单向链表的方式来实现这个栈。在该 Task 中，你暂时不需要考虑 `__generator` 结构体的作用，只需要知道 `__now_gen->__err_stk_head` 是这个单向链表的表头，`__err_stk_node` 结构体用于表示链表的节点。你需要实现 `__err_stk_push` 和 `__err_stk_pop` 两个函数来实现链表的操作。
-
-> [3]
 
 **Task 4.2** 请在 `context.c` 中实现函数 `__err_stk_push` 和 `__err_stk_pop`。如果一切顺利，在完成本节内容后，你将能通过 test3、test4 和 test5。
 
