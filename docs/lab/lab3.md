@@ -812,7 +812,7 @@ int main() {
 ## 参考资料与鸣谢
 
 - CMU 原版 [Attack Lab](http://csapp.cs.cmu.edu/3e/labs.html)
-- 2022年 Kieray Lab，作者 @[虎鲸](https://github.com/zzzly3)
-- 本实验参考 2024 年的 StackLab 实验开发，鸣谢24 Fall TA：@[y<sup>2</sup>](https://github.com/Cameudis)、@[Yosame](https://github.com/Yosame08)
+- 2022 Kieray Lab，作者 @[虎鲸](https://github.com/zzzly3)
+- 本实验参考 2024 年的 StackLab 实验开发，鸣谢 2024 Fall TA：@[y<sup>2</sup>](https://github.com/Cameudis)、@[Yosame](https://github.com/Yosame08)
 
 > 负责助教：周弈成 @[JurFal](https://github.com/JurFal) 朱程炀 @[Zecyel](https://github.com/Zecyel)
