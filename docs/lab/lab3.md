@@ -510,7 +510,7 @@ funcB:
 
 **Task 4.3** 根据自己编写的上下文保存和恢复规则，参照样例解释，实现 `generator` 构造函数的**上下文构建部分**；完成此内容后，你将能通过 test6、test7 和 test8。
 
-**Problem 4.3** 请阅读 `context.c` 中的函数 `send`、 `yield`、 `back_to_reality`，`context.h` 中对 `try`、`catch` 和 `throw` 的宏定义，并在报告中解释这些函数和宏定义的功能。
+**Problem 4.3** 请阅读 `context.c` 中的函数 `send`、 `yield`、 `back_to_reality`，`context.h` 中对 `try`、 `catch` 和 `throw` 的宏定义，并在报告中解释这些函数和宏定义的功能。
 
 **Problem 4.4** 任选 test6、test7、test8 中的一个，使用 GDB 动态调试，运用 `x/10gx $rsp` 指令查看至少两种不同位置处开始的栈帧或是伪栈帧并截图，体会协程中开辟虚拟栈空间的设计。
 
