@@ -1,4 +1,4 @@
-# Lab3: StackLab
+# Lab3: FlowLab
 
 > Deadline：2025-11-11 23:59:59
 
@@ -68,7 +68,7 @@ gets(buffer);
 
 之所以栈溢出漏洞如此危险，是因为它可以被利用来劫持程序的控制流。我们来回忆一下，栈上有哪些数据？
 
-![栈帧示意图](stacklab/stack_contents.png)
+![栈帧示意图](flowlab/stack_contents.png)
 
 注意到，其中有一个重要的数据：返回地址。当函数调用结束时，程序会跳转到这个返回地址继续执行。
 
@@ -543,7 +543,7 @@ def game():
 
 **Task 4.4** 基于上面的讨论，请你完善 `main.c` 中的 `progress_bar` 函数，实现一个自定义的进度条动画。发挥你的想象力即可。
 
-![进度条](stacklab/task3_result.gif)
+![进度条](flowlab/task3_result.gif)
 
 ## 五、控制流和栈帧的进一步思考
 
@@ -661,10 +661,72 @@ def game():
 >
 > 你知道吗，MSVC 编译器会使用不同于 Clang 和 GCC 的异常处理策略，它使用的策略叫做 SEH（Structured Exception Handling），通过 FS:[0] 注册异常回调。
 
+### Honor Part: 代数效应
+
+> 为了奖励还能咬着牙把 FlowLab 写到 Honor Part 的同学，@Zecyel 写了一个关于异常控制流的小剧场供大家娱乐。
+>
+> 丰try·祥子: 调用栈已经分崩离析了，绝对不可能复活。
+>
+> 长崎·raise: 哦内盖，如果不能恢复执行的话，瓦达西……
+>
+> 长崎·raise: 要怎么做才能回来？只要是我能做的，我什么都愿意做！
+>
+> 丰try·祥子: 你这个人，满脑子都只想着自己呢。
+
+和其它 lab 的评分标准相同，除去 Honor Part 的内容满分为 100 分，Honor Part 只能用来抵前面报告的扣分和迟交得分。Lab 的分数上限仍为 100 分。
+
+我们回想一下生活中。如果我们正在写作业，接到了一个电话。那我们可以在接完电话之后重新回去写作业。同样的，当 CPU 在执行计算任务时，突然接收到了一个“鼠标点击”事件，那么它也可以在处理完这个事件之后重新回去计算。那么，我们可不可以把这个特性移植到编程语言中呢？
+
+我们回想一下异常处理流，它也有类似的“事件-响应”的范式，但是在响应完成之后不能回到原来的地方继续执行。这其实不难理解，因为异常已经发生了，如果什么都不干，再回去执行大概率还是会遇到相同的异常。而且一般来说我们也不希望它接着运行。
+
+我们先幻想一下，如果可以回去执行，那么我们写代码会变成什么样子呢？
+
+我们把我们的假想的语法叫做 `perform`/`resume`，当我们执行 `perform` 的时候，我们往上找到最近的一个可以接收它的 `handle` 块，然后等待它 `resume`，然后恢复到 `perform` 的时候继续执行。
+
+一个示例代码如下。当程序运行到 `getUsernameById` 时，会唤起 `DatabaseEffect`，然后等待外部把数据库对象给它，然后它再跳转回去恢复执行。从而避免了数据库实例需要一级一级向下传递，产生大量冗余代码和拷贝开销，以及各处使用的数据库实例不一致（比如某个函数中忘记传参数）等各种问题。
+
+```cpp
+// 声明效果类型
+struct DatabaseEffect {};
+
+std::string getUsernameById(int userId) {
+    // 发起数据库连接效果
+    auto db = perform DatabaseEffect{};  // 假设返回 DB 连接对象
+    
+    // 恢复后继续执行
+    return db.query("SELECT name FROM users WHERE id=" + std::to_string(userId));
+}
+
+int main() {
+    try {
+        auto username = getUsernameById(123);
+        std::cout << "Username: " << username;
+    }
+    handle (effect) {  // 自定义 handle 语法
+        if (effect.isType<DatabaseEffect>()) {
+            auto conn = connectDatabase("mongodb://localhost:27017"); // 建立真实连接
+            resume conn;  // 将连接对象返回给 perform 处
+        }
+    }
+}
+```
+
+以上就是所谓的“代数效应”，我们会把这个例子中的 `DatabaseEffect` 叫做一种“效应”。从函数式的视角来看，我们也会发现，通过这样处理之后，我们的 `getUsernameById` 变成了无副作用的安全代码，实现了“环境”和“计算”的分离。不过可惜的是，目前尚未有主流语言支持了代数效应。
+
+> [!NOTE]
+>
+> 请仔细阅读实验文档、查阅资料，并在报告中回答问题：（10分）
+>
+> 你能再举几个代数效应的应用的例子吗？有哪些你在编程中遇到的问题可以使用代数效应更好的解决？
+>
+> 之所以我们的异常控制流实验不用类似 Itanium C++ ABI 的做法，是因为其实编译器知道更多关于 try/except 的信息，比如它在 try 的时候就知道 except 块的地址是什么，但是我们的实验中不知道，所以只能用宏来实现一个简单类似的功能。
+>
+> 问，假如你是编译器，你会使用什么策略来编译使用了代数效应的代码？详细阐明你的设计，并论证它是合理。
+
 ## 参考资料与鸣谢
 
 - CMU 原版 [Attack Lab](http://csapp.cs.cmu.edu/3e/labs.html)
 - 2022年 Kieray Lab，作者 @[虎鲸](https://github.com/zzzly3)
-- 本实验参考 2024 年的实验开发，鸣谢24 Fall TA：@[y<sup>2</sup>](https://github.com/Cameudis)、@[Yosame](https://github.com/Yosame08)
+- 本实验参考 2024 年的 StackLab 实验开发，鸣谢24 Fall TA：@[y<sup>2</sup>](https://github.com/Cameudis)、@[Yosame](https://github.com/Yosame08)
 
 > 负责助教：周弈成 @[JurFal](https://github.com/JurFal) 朱程炀 @[Zecyel](https://github.com/Zecyel)
