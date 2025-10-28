@@ -6,7 +6,7 @@
 
 ### 实验简介
 
-栈帧与程序控制流相关实验。
+栈帧与程序控制流相关实验。点击[链接](https://classroom.github.com/a/EZyT0dZ7)领取作业。
 
 本学期，我们依然将金老师 ICS 第三个 Lab 回炉重造，减轻代码工作量并添加更多讲解和提示，以加深各位同学对栈帧和程序控制流的理解。
 
@@ -719,9 +719,9 @@ def game():
 +-------------------+
 | Next Record Ptr   |
 |-------------------|
-| Handler Function  |  // 指向异常处理函数（如__gxx_personality_v0）
+| Handler Function  |
 |-------------------|
-| Scope Table Ptr   |  // 指向.tdata/.eh_frame的异常范围表
+| Scope Table Ptr   |
 +-------------------+
 ```
 
@@ -816,3 +816,4 @@ int main() {
 - 本实验参考 2024 年的 StackLab 实验开发，鸣谢 2024 Fall TA：@[y<sup>2</sup>](https://github.com/Cameudis)、@[Yosame](https://github.com/Yosame08)
 
 > 负责助教：周弈成 @[JurFal](https://github.com/JurFal) 朱程炀 @[Zecyel](https://github.com/Zecyel)
+
