@@ -64,6 +64,12 @@ function sidebarGuide(): DefaultTheme.Sidebar {
       ]
     },
     {
+      text: '课程项目',
+      items: [
+        { text: 'Y86-64 模拟器', link: 'project/project'}
+      ]
+    },
+    {
       text: '附录',
       items: [
         { text: '提问的艺术', link: '/appendix/how-to-ask' },
