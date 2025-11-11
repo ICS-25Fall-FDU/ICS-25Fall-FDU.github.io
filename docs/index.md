@@ -15,6 +15,7 @@ next: false
 * **Sep. 30, 2025** [Lab1: DataLab](/lab/lab1)发布
 * **Oct. 14, 2025** [Lab2: BombLab](/lab/lab2)发布
 * **Oct. 28, 2025** [Lab3: FlowLab](/lab/lab3)发布
+* **Nov. 11, 2025** [PJ: Y86-64 Simulator](/project/project)发布
 
 ## 🔍 Just for Fun
 
