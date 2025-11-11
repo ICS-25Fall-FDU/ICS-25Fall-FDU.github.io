@@ -133,8 +133,6 @@ git clone git@github.com:fduTristin/Y86-64-Simulator.git
 
 ## 评分标准
 
-
-
 项目得分计算公式为：
 
    $\text{总分} = \text{得分上限} * (\frac{5}{6}\text{基础功能得分} + \frac{1}{6}\text{汇报得分})$
