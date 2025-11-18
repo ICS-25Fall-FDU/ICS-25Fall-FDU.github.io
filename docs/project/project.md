@@ -116,10 +116,10 @@ Y86-64 指令集在 CSAPP 书中第四章有详细的介绍。以下是 Y86-64 �
 
 ### 代码下载
 
-仓库地址为 [fduTristin/Y86-64-Simulator](https://github.com/fduTristin/Y86-64-Simulator)，在你的开发环境终端执行以下命令以获取项目初始代码。
+仓库地址为 [ICS-25Fall-FDU/PJ-Y86-64-Simulator](https://github.com/ICS-25Fall-FDU/PJ-Y86-64-Simulator)，在你的开发环境终端执行以下命令以获取项目初始代码。
 
 ```bash
-git clone git@github.com:fduTristin/Y86-64-Simulator.git
+git clone git@github.com:ICS-25Fall-FDU/PJ-Y86-64-Simulator.git
 ```
 
 > [!info]
