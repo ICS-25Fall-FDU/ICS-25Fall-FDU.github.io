@@ -126,6 +126,10 @@ git clone git@github.com:fduTristin/Y86-64-Simulator.git
 >
 > - `cpu.h`、`cpu.c`、`cpu.py`、`Makefile` 文件仅供参考，你可以将他们删去。
 
+### 测试
+
+参考项目仓库中的 `README.md` 文件。
+
 ### 提交
 
 将你的代码打包为 `.zip` 或 `.tar.gz` 文件，命名为 `code-姓名1-姓名2-姓名3.zip` 或 `code-姓名1-姓名2-姓名3.tar.gz`，PPT 命名为 `pre-姓名1-姓名2-姓名3.pptx` 提交到 elearning。**小组内每位同学都需要提交。**
