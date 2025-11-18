@@ -10,7 +10,7 @@ CSAPP 第四章配套课程项目。
 
 - **单人或组队（不多于3人）** 完成。
 - 输入输出格式正确，能够通过测试。
-- 对技术栈不作限制，你可以使用 C，C++，python 等编程语言实现模拟器。
+- 对技术栈不作限制，你可以使用 C，C++，Python 等编程语言实现模拟器。
 - 对处理器架构不作限制，可以是单周期 / 多周期。
 - 有兴趣的同学可以在通过测试后做一些创新，可以从课本上的其他章节寻找灵感。
     > [!important]
@@ -116,20 +116,23 @@ Y86-64 指令集在 CSAPP 书中第四章有详细的介绍。以下是 Y86-64 �
 
 ### 代码下载
 
-由于分组暂未确认，我们还未生成作业仓库，但测试文件已经编写完成，临时仓库地址为 [fduTristin/Y86-64-Simulator](https://github.com/fduTristin/Y86-64-Simulator)，在你的开发环境终端执行以下命令以获取临时项目代码。
+仓库地址为 [ICS-25Fall-FDU/PJ-Y86-64-Simulator](https://github.com/ICS-25Fall-FDU/PJ-Y86-64-Simulator)，在你的开发环境终端执行以下命令以获取项目初始代码。
 
 ```bash
-git clone git@github.com:fduTristin/Y86-64-Simulator.git
+git clone git@github.com:ICS-25Fall-FDU/PJ-Y86-64-Simulator.git
 ```
 
 > [!info]
 >
-> - 临时仓库的测试文件之后将不会改变，正式的仓库会新增自动评分脚本以及可能会新增更详细的说明文档。
-> - 目录下的 `cpu.h`、`cpu.c`、`cpu.py`、`Makefile` 文件仅供参考，你可以将他们删去。
+> - `cpu.h`、`cpu.c`、`cpu.py`、`Makefile` 文件仅供参考，你可以将他们删去。
+
+### 测试
+
+参考项目仓库中的 `README.md` 文件。
 
 ### 提交
 
-单人完成项目的提交流程与之前的 lab 相同（需要等待正式作业仓库生成），多人协作项目的提交方式待定。
+将你的代码打包为 `.zip` 或 `.tar.gz` 文件，命名为 `code-姓名1-姓名2-姓名3.zip` 或 `code-姓名1-姓名2-姓名3.tar.gz`，PPT 命名为 `pre-姓名1-姓名2-姓名3.pptx` 提交到 elearning。**小组内每位同学都需要提交。**
 
 ## 评分标准
 
