@@ -60,7 +60,8 @@ function sidebarGuide(): DefaultTheme.Sidebar {
         { text: 'Lab0: GitLab', link: '/lab/lab0' },
         { text: 'Lab1: DataLab', link: '/lab/lab1' },
         { text: 'Lab2: BombLab', link: '/lab/lab2' },
-        { text: 'Lab3: FlowLab', link: '/lab/lab3' }
+        { text: 'Lab3: FlowLab', link: '/lab/lab3' },
+        { text: 'Lab4: CacheLab', link: '/lab/lab4' }
       ]
     },
     {
