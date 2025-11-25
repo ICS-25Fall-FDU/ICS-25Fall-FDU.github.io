@@ -22,7 +22,7 @@
 
 > [!important]
 >
-> 点击 [此链接]() 领取作业
+> 点击 [此链接](https://classroom.github.com/a/lYaB96qv) 领取作业
 
 ### 准备工作
 
