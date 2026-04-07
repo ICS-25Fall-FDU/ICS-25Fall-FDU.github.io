@@ -6,7 +6,7 @@ next: false
 
 这是复旦大学2025年秋季学期《计算机系统基础》课程的配套实验内容。
 
-实验内容将包括：安装**Linux 系统**，学习使用**Git**，整数和浮点数的机器级表示，使用 **GDB** 拆除二进制炸弹，█████，设计 Y86-64 模拟器。
+实验内容将包括：安装**Linux 系统**，学习使用**Git**，整数和浮点数的机器级表示，使用 **GDB** 拆除二进制炸弹，栈帧与程序控制流，实现高速缓存与算法优化，设计 Y86-64 模拟器。
 
 ## 📰 News
 
@@ -16,9 +16,6 @@ next: false
 * **Oct. 14, 2025** [Lab2: BombLab](/lab/lab2)发布
 * **Oct. 28, 2025** [Lab3: FlowLab](/lab/lab3)发布
 * **Nov. 11, 2025** [PJ: Y86-64 Simulator](/project/project)发布
-
-## 🔍 Just for Fun
-
-<video src="/assets/sl.mp4" controls width="800"></video>
+* **Nov. 25, 2025** [Lab4: CacheLab](/lab/lab4)发布
 
 <Confetti />
